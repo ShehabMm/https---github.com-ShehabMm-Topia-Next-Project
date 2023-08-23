@@ -1,5 +1,7 @@
-import "@styles/globals.css"; 
-import Nav from "@components/nav"
+import "@styles/globals.css";
+import Provider from "@components/provider";
+import SignIn from "@components/signin";
+
 export const metadata = {
   title: "Topia",
   description: "Discover and share AI prompts",
@@ -13,8 +15,11 @@ export default function RootLayout({ children }) {
         <div className="gradient"></div>
 
         <main className="app">
-          <Nav/>
-          {children}</main>
+          <Provider>
+          <SignIn />
+
+            {children}</Provider>
+        </main>
       </body>
     </html>
   );
